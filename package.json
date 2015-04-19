@@ -1,0 +1,26 @@
+{
+  "name": "maketimetable",
+  "version": "0.0.2",
+  "description": "dynamically generate time table",
+  "main": "index.js",
+  "dependencies": {
+    "minimist": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hatelove85911/makeTimeTable.git"
+  },
+  "author": {
+    "name": "Jun Shen",
+    "email": "redwolf85911@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hatelove85911/makeTimeTable/issues"
+  },
+  "homepage": "https://github.com/hatelove85911/makeTimeTable"
+}
