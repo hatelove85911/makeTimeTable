@@ -2,7 +2,6 @@
   "name": "maketimetable",
   "version": "0.0.3",
   "description": "dynamically generate time table",
-  "main": "index.js",
   "dependencies": {
     "minimist": "^1.1.1"
   },
@@ -22,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/hatelove85911/makeTimeTable/issues"
   },
+  "bin": "./cli.js",
   "homepage": "https://github.com/hatelove85911/makeTimeTable"
 }
