@@ -1,5 +1,3 @@
-var fs = require('fs');
-
 function randomDateByOffset(base, hours, mins, seconds) {
     hours = hours || 0;
     mins = mins || 0;
@@ -23,7 +21,7 @@ function generateTimeTableData(config) {
 
         //generate time time data
         for (var i = 0, l = numberOfStages; i < l; i++) {
-            departure = i === 0 ? randomDateByOffset(config.start, 1) : randomDateByOffset(result[i - 1].arr, 0, 30);
+            departure = i === 0 ? randomDateByOffset(config.start, 0, 30) : randomDateByOffset(result[i - 1].arr, 0, 30);
             arrival = randomDateByOffset(departure, 1);
 
             if (Array.isArray(config.stops)) {

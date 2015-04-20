@@ -1,6 +1,6 @@
 var fs = require('fs'),
     argv = require('minimist')(process.argv.slice(2)),
-    makeTimeTable = require('makeTimeTable'),
+    makeTimeTable = require('./makeTimeTable'),
     configuration = {},
     timeTables = [];
 
