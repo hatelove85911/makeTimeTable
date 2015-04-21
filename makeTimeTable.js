@@ -21,22 +21,40 @@ function generateTimeTableData(config) {
 
         //generate time time data
         for (var i = 0, l = numberOfStages; i < l; i++) {
-            departure = i === 0 ? randomDateByOffset(config.start, 0, 30) : randomDateByOffset(result[i - 1].arr, 0, 30);
-            arrival = randomDateByOffset(departure, 1);
+            if (i === 0) {
+                departure = randomDateByOffset(config.start, 0, 30);
 
-            if (Array.isArray(config.stops)) {
-                result.push({
-                    src: config.stops[i],
-                    des: config.stops[i + 1],
-                    dep: departure,
-                    arr: arrival
-                });
+                if (Array.isArray(config.stops)) {
+                    result.push({
+                        src: config.stops[i],
+                        des: config.stops[i + 1],
+                        dep: departure
+                    });
+                } else {
+                    result.push({
+                        dep: departure
+                    });
+                }
             } else {
-                result.push({
-                    dep: departure,
-                    arr: arrival
-                });
+
+                arrival = randomDateByOffset(result[i - 1].dep, 1); // run in about one hour
+                departure = randomDateByOffset(arrival, 0, 30); // dwell in about half an hour
+
+                if (Array.isArray(config.stops)) {
+                    result.push({
+                        src: config.stops[i],
+                        des: config.stops[i + 1],
+                        arr: arrival,
+                        dep: departure
+                    });
+                } else {
+                    result.push({
+                        arr: arrival,
+                        dep: departure
+                    });
+                }
             }
+
         }
     }
 
