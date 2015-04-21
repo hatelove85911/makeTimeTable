@@ -1,6 +1,6 @@
 {
   "name": "maketimetable",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "dynamically generate time table",
   "main": "makeTimeTable.js",
   "dependencies": {
